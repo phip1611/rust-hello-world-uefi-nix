@@ -1,0 +1,10 @@
+[package]
+name = "rust-hello-world-uefi-app"
+version = "0.1.0"
+authors = ["Philipp Schuster <phip1611@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+uefi = "0.8.1"
+uefi-services = "0.5.1"
+panic-halt = "0.2.0"
