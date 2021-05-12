@@ -3,18 +3,20 @@
 #![feature(asm)]
 #![feature(abi_efiapi)]
 
-// bring in the panic_halt-handlers
-extern crate panic_halt;
+extern crate alloc;
 
 use uefi::prelude::*;
-use core::fmt::Write;
+use log::info;
+use alloc::string::ToString;
 
 #[entry] // expands to "no_mangle" and some more code
 // the function must be named like this!
 fn efi_main(_image_handler: uefi::Handle, system_table: SystemTable<Boot>) -> Status {
-    loop {
-        system_table.stdout().write_str("Moin\n");
-        system_table.boot_services().stall(1_000_000);
-    }
+    // - inits "halt on panic"
+    // - inits a logger, then we can use "log" crate including formatting!
+    uefi_services::init(&system_table).expect_success("Failed to initialize utils");
+    info!("Firmware Version: {:?}", system_table.firmware_revision());
+    info!("Firmware Vendor : {}", system_table.firmware_vendor().to_string());
+    loop {}
     Status::SUCCESS
 }
