@@ -1,7 +1,11 @@
 #!/bin/bash
 
+# This script requires that you followed the prerequisite steps in the README.md beforehand.
+# You must have a valid EDK2/OVMF build.
+
 set -e
 
+# change this to fit your local environment!
 EDK2_REPOSITORY_PATH="../edk2"
 
 RED="\e[31m"
