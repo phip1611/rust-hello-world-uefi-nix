@@ -15,6 +15,7 @@ fn efi_main(_image_handler: uefi::Handle, system_table: SystemTable<Boot>) -> St
     // - inits "halt on panic"
     // - inits a logger, then we can use "log" crate including formatting!
     uefi_services::init(&system_table).expect_success("Failed to initialize utils");
+    info!("This output comes from the Hello World UEFI-App written in Rust.");
     info!("Firmware Version: {:?}", system_table.firmware_revision());
     info!("Firmware Vendor : {}", system_table.firmware_vendor().to_string());
     loop {}

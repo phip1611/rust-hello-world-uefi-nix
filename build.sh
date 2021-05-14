@@ -15,7 +15,8 @@ RESET="\e[0m"
 # main allows us to move all function definitions to the end of the file
 main() {
   #### STAGE 0: RUST BINARY
-  # this build works because we have additional config
+  # This project was built/tested with `rustc 1.54.0-nightly.
+  # The build works because we have additional config
   # specified in .cargo/config.toml -> check out the comments there
   cargo build --target x86_64-unknown-uefi
 

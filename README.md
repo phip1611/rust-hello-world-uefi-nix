@@ -1,5 +1,7 @@
 # Task: Hello World UEFI Application
 
+**⚠ This project was built/tested with `rustc 1.54.0-nightly` ⚠**
+
 This repository consists of:
 - a "hello world"-UEFI-Application written in Rust called `rust-hello-world-uefi-app.efi`
 - a `build.sh` file that:
