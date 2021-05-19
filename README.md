@@ -1,6 +1,8 @@
 # Task: Hello World UEFI Application
 
-**⚠ This project was built/tested with `rustc 1.54.0-nightly` ⚠**
+**⚠ This project was built/tested with `rustc 1.54.0-nightly` because
+    it uses the unstable `build-std`-feature to cross-compile the
+    core library for the UEFI target.⚠**
 
 This repository consists of:
 - a "hello world"-UEFI-Application written in Rust called `rust-hello-world-uefi-app.efi`
@@ -48,6 +50,17 @@ You need this for the firmware image that should be loaded into QEMU later.
 
 ### Prepare everything for **QEMU**
 - `$ sudo apt install qemu qemu--kvm`
+
+## Trivia for target `x86_64-unknown-uefi`
+- RFC: https://github.com/rust-lang/rust/pull/56769/files
+- Merge of the target into Rust (2018-12-13): 
+  https://github.com/rust-lang/rust/commit/88cf2a23e24cdbf7a134d14185c1e5b69ffd07c3  
+- (UEFI) ABI is mostly similar to windows -> target implementation was relatively easy
+- currently, core library must be cross compiled using the unstable feature
+  `build-std` of cargo (therefore rust nightly us used)
+- as of May 2021 (rustc 1.54.0-nightly) there is no installable target
+  available, i.e. `rustup target add x86_64-unknown-uefi` will do nothing
+  --> reason to cross compile
 
 ## Interesting links
 - https://github.com/rust-osdev/uefi-rs
