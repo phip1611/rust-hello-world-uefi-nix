@@ -1,6 +1,8 @@
 #![no_std]
 #![no_main]
+// allow inline assembly
 #![feature(asm)]
+// compile target with efi abi calling convention
 #![feature(abi_efiapi)]
 
 extern crate alloc;
