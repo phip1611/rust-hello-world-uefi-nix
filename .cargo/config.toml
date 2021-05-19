@@ -1,7 +1,7 @@
-# This project was built/tested with `rustc 1.54.0-nightly.
 # We use a yet unstable Cargo-feature here called "build-std".
-# This is required to cross-compile the core-library for the target
-# "x86_64-unknown-uefi".
+# This is the reason why we need the nightly version (at least in May 2021).
+# The feature is required to cross-compile the core-library for the
+# target "x86_64-unknown-uefi".
 [unstable]
 build-std = ["core", "compiler_builtins", "alloc"]
 # https://github.com/rust-osdev/cargo-xbuild

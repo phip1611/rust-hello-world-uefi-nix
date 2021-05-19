@@ -1,9 +1,15 @@
 # Task: Hello World UEFI Application
 
-**⚠ This project was built/tested with `rustc 1.54.0-nightly` because
-    it uses the unstable `build-std`-feature to cross-compile the
-    core library for the UEFI target.⚠**
+## ⚠ Important Build Notice ⚠   
+This project was built/tested with `rustc 1.51.0-nightly`/`cargo 1.50.0-nightly` because
+* it uses the unstable `build-std`-feature to cross-compile the core library for the UEFI target.
+* Nix/naersk doesn't work with `Cargo.lock`-files from newer Cargo versions than the one specified above,
+  see https://github.com/nmattia/naersk/issues/176
+* to use the specific version locally (which is not necessarily required because of Nix)
+  execute: \ 
+  `$ rustup default nightly-2020-12-31`
 
+## About this repo
 This repository consists of:
 - a "hello world"-UEFI-Application written in Rust called `rust-hello-world-uefi-app.efi`
 - a `build.sh` file that:

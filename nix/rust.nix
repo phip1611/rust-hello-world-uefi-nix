@@ -11,7 +11,16 @@ let
 
   #channel = "stable";
   channel = "nightly";
-  date = "2021-05-10";
+
+  # This is the earliest release day of rust nightly, where cargo doesn't add the
+  # "release = 3" to Cargo.toml - this is required for nix/naersk as long as
+  # https://github.com/nmattia/naersk/issues/176 is not resolved.
+  #
+  # It will install rustc 1.51.0-nightly and cargo 1.50.0-nightly.
+  #
+  # To install the versions locally, execute:
+  # $ rustup default nightly-2020-12-31      (nightlys are not versioned, therefore you have to use the date)
+  date = "2020-12-31";
   targets = [ ];
   chan = pkgs.rustChannelOfTargets channel date targets;
 in chan
