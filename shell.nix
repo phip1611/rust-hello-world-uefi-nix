@@ -4,10 +4,12 @@ let
   pkgs = import sources.nixpkgs {};
 in
 pkgs.mkShell {
+
   buildInputs = [
     rust
   ];
 
+
   # Environment variables
-  HELLO="world";
+  # KEY=VALUE
 }
