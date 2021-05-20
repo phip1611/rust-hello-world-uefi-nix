@@ -7,3 +7,7 @@ build-std = ["core", "compiler_builtins", "alloc"]
 # https://github.com/rust-osdev/cargo-xbuild
 # has "memset" "memcpy" etc support (otherwise libc may be used, which is not available)
 build-std-features = ["compiler-builtins-mem"]
+
+# default target; not longer required to pass --target manually
+[build]
+target = "x86_64-unknown-uefi"
