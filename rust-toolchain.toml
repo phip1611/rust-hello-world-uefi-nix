@@ -1,0 +1,9 @@
+# With this file, another toolchain to the currently selected one will be used.
+# https://rust-lang.github.io/rustup/overrides.html
+
+[toolchain]
+# see README.md why this version was chosen
+channel = "nightly-2020-12-31"
+# components = [ "rustfmt", "rustc-dev" ]
+# targets = [  ]
+# profile = "minimal"
