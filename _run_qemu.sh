@@ -10,10 +10,6 @@ OVMF_BUILD_ARTIFACT_PATH="${EDK2_REPOSITORY_PATH}/Build/OvmfX64/DEBUG_GCC5/FV"
 OVMF_FW_PATH="${OVMF_BUILD_ARTIFACT_PATH}/OVMF_CODE.fd"
 OVMF_VARS_PATH="${OVMF_BUILD_ARTIFACT_PATH}/OVMF_VARS.fd"
 
-# final binary names
-OVMF_FW="ovmf_uefi.img"
-OVMF_VARS="ovmf_uefi_vars.img"
-
 # main allows us to move all function definitions to the end of the file
 main() {
 
